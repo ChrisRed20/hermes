@@ -1,7 +1,6 @@
-
 import { Component } from '@angular/core';
 import { RouterLink, RouterLinkActive } from '@angular/router';
-import { IonicModule } from '@ionic/angular';
+import { IonApp, IonIcon, IonLabel, IonNote, IonContent, IonListHeader, IonMenu, IonList, IonMenuToggle, IonRouterOutlet } from '@ionic/angular/standalone';
 import { addIcons } from 'ionicons';
 import { home, bus, receipt, create, build } from 'ionicons/icons';
 
@@ -9,15 +8,13 @@ import { home, bus, receipt, create, build } from 'ionicons/icons';
   selector: 'app-root',
   templateUrl: 'app.component.html',
   styleUrls: ['app.component.scss'],
-  imports: [RouterLink, RouterLinkActive, IonicModule,],
+  imports: [ IonRouterOutlet, IonList, IonListHeader, IonContent, IonMenu, IonMenuToggle, IonNote, IonLabel, IonIcon, RouterLink, RouterLinkActive, IonApp],
 })
 export class AppComponent {
   nameApp = 'Hermes';
   user = 'movilidad@gob.ags.mx';
   public appPages = [
     { title: 'Inicio', url: '/inicio', icon: 'home' },
-    { title: 'Registro', url: '/registro', icon: 'create' },
-    { title: 'Transporte', url: '/transporte', icon: 'bus' },
     { title: 'Incidencias', url: '/incidencias', icon: 'receipt' },
     { title: 'Configuracion', url: '/configuracion', icon: 'build' }
   ];

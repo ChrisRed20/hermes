@@ -8,9 +8,66 @@
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">configuracion</ion-title>
-    </ion-toolbar>
-  </ion-header>
+  <ion-list>
+    <ion-item-group>
+      <ion-item-divider color="light">
+        <ion-label><b>Personalizacion</b></ion-label>
+      </ion-item-divider>
+      <ion-item>
+        <ion-label>Modo oscuro</ion-label>
+        <ion-toggle slot="end"></ion-toggle>
+      </ion-item>
+      <ion-item>
+        <ion-label>Tamaño del texto</ion-label>
+        <ion-select slot="end" interface="popover" placeholder="Seleccionar">
+          <ion-select-option value="small">Pequeño</ion-select-option>
+          <ion-select-option value="medium">Mediano</ion-select-option>
+          <ion-select-option value="large">Grande</ion-select-option>
+          <ion-select-option value="xlarge">Extra Grande</ion-select-option>
+        </ion-select>
+      </ion-item>
+      <ion-item>
+        <ion-label>Idioma</ion-label>
+        <ion-select slot="end" interface="popover" placeholder="Seleccionar">
+          <ion-select-option value="es">Español</ion-select-option>
+          <ion-select-option value="en">Inglés</ion-select-option>
+        </ion-select>
+      </ion-item>
+    </ion-item-group>
+    <ion-item-group>
+      <ion-item-divider color="light">
+        <ion-label><b>Notificaciones</b></ion-label>
+      </ion-item-divider>
+      <ion-item>
+        <ion-label>Activar notificaciones</ion-label>
+        <ion-toggle slot="end"></ion-toggle>
+      </ion-item>
+      <ion-item>
+        <ion-label>Sonido</ion-label>
+        <ion-toggle slot="end"></ion-toggle>
+      </ion-item>
+      <ion-item>
+        <ion-label>Vibración</ion-label>
+        <ion-toggle slot="end"></ion-toggle>
+      </ion-item>
+    </ion-item-group>
+    <ion-item-group>
+      <ion-item-divider color="light">
+        <ion-label><b>Soporte y ayuda</b></ion-label>
+      </ion-item-divider>
+      <ion-item>
+        <ion-label>FAQ</ion-label>
+        <ion-icon slot="end" name="chevron-forward-outline"></ion-icon>
+      </ion-item>
+      <ion-item>
+        <ion-label>Contactar soporte</ion-label>
+        <ion-icon slot="end" name="chevron-forward-outline"></ion-icon>
+      </ion-item>
+      <ion-item>
+        <ion-label>Terminos y condiciones</ion-label>
+        <ion-icon slot="end" name="chevron-forward-outline"></ion-icon>
+      </ion-item>
+    </ion-item-group>
+  </ion-list>
+
 </ion-content>

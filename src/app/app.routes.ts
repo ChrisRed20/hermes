@@ -16,16 +16,8 @@ export const routes: Routes = [
     loadComponent: () => import('./home/home.page').then( m => m.HomePage)
   },
   {
-    path: 'registro',
-    loadComponent: () => import('./registro/registro.page').then( m => m.RegistroPage)
-  },
-  {
     path: 'incidencias',
     loadComponent: () => import('./incidencias/incidencias.page').then( m => m.IncidenciasPage)
-  },
-  {
-    path: 'transporte',
-    loadComponent: () => import('./transporte/transporte.page').then( m => m.TransportePage)
   },
   {
     path: 'configuracion',
