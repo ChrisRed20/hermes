@@ -8,7 +8,7 @@ import { IonButtons, IonContent, IonHeader, IonMenuButton, IonTitle, IonToolbar,
   templateUrl: './configuracion.page.html',
   styleUrls: ['./configuracion.page.scss'],
   standalone: true,
-  imports: [IonIcon, IonButton, IonInput, IonItemDivider, IonItemGroup, IonToggle, IonLabel, IonItem, IonListHeader, IonList, IonContent, IonHeader, IonTitle, IonToolbar, IonSelect, IonSelectOption, CommonModule, FormsModule, IonMenuButton, IonButtons]
+  imports: [IonIcon, IonItemDivider, IonItemGroup, IonToggle, IonLabel, IonItem, IonList, IonContent, IonHeader, IonTitle, IonToolbar, IonSelect, IonSelectOption, CommonModule, FormsModule, IonMenuButton, IonButtons]
 })
 export class ConfiguracionPage implements OnInit {
 

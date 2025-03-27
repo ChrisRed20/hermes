@@ -5,6 +5,7 @@ import { IonicModule } from '@ionic/angular';
 
 import * as L from 'leaflet'
 import { Geolocation } from '@capacitor/geolocation';
+import { SocketService } from '../services/socket.service';
 
 @Component({
   selector: 'app-home',
@@ -14,13 +15,18 @@ import { Geolocation } from '@capacitor/geolocation';
   imports: [ CommonModule, FormsModule, IonicModule ]
 })
 export class HomePage implements AfterViewInit{
-  private map!: L.Map;
-  private marker!: L.Marker; 
+  map!: L.Map;
+  marker!: L.Marker; 
 
-  constructor() { }
+  constructor(private socket: SocketService) { }
 
   ngAfterViewInit(): void {
     this.loadMap();
+    // this.socket.escucharUbicacion().subscribe((data: any) => {
+    //   console.log('Ubicacion actualizada', data);
+    //   this.marker.setLatLng([data.lat, data.lon]);
+    //   this.map.setView([data.lat, data.lon], 15);
+    // });
   }
 
   async loadMap () {
@@ -41,7 +47,7 @@ export class HomePage implements AfterViewInit{
     }).addTo(this.map);
 
     // Crear un marcador en la posicion del usuario
-    this.marker = L.marker([lat, lon]).addTo(this.map).bindPopup('Tu ubicación actual').openPopup();
+    this.marker = L.marker([lat, lon]).addTo(this.map).bindPopup('ubicación actual').openPopup();
 
     // Actualizar la posicion del marcador
     this.trackPosition();
