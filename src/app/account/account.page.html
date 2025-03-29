@@ -1,0 +1,27 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Mi Tarjeta</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <div class="saldo-card">
+    <ion-card>
+      <ion-card-header>
+        <ion-card-subtitle>Saldo Disponible</ion-card-subtitle>
+        <ion-card-title>
+          <h1 class="saldo-text">${{ saldo }}</h1>
+        </ion-card-title>
+      </ion-card-header>
+      <ion-card-content>
+        <ion-icon name="card-outline" size="large"></ion-icon>
+        <p>Acerca tu tarjeta al teléfono para actualizar el saldo.</p>
+      </ion-card-content>
+    </ion-card>
+  </div>
+
+  <ion-button expand="block" color="secondary" (click)="simularLectura()">Simular Lectura</ion-button>
+</ion-content>

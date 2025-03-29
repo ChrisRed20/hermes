@@ -3,10 +3,47 @@
     <ion-buttons slot="start">
       <ion-menu-button></ion-menu-button>
     </ion-buttons>
-    <ion-title>Incidencias</ion-title>
+    <ion-title>Registro de incidencias</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
+  <ion-card>
+    <ion-card-header>
+      <ion-card-subtitle>Formulario</ion-card-subtitle>
+      <ion-card-title>Detalles de la Incidencia</ion-card-title>
+    </ion-card-header>
 
+    <ion-card-content>
+      <ion-item>
+        <ion-label position="floating">Tipo de incidencia</ion-label>
+        <ion-select [(ngModel)]="incidencia.tipo" interface="popover">
+          <ion-select-option value="retraso">Retraso en la unidad</ion-select-option>
+          <ion-select-option value="falla">Falla mecánica</ion-select-option>
+          <ion-select-option value="comportamiento">Mal comportamiento del conductor</ion-select-option>
+          <ion-select-option value="pago">Problemas con el pago</ion-select-option>
+          <ion-select-option value="otro">Otro</ion-select-option>
+        </ion-select>
+      </ion-item>
+
+      <ion-item>
+        <ion-label position="floating">Descripción</ion-label>
+        <ion-textarea [(ngModel)]="incidencia.descripcion" autoGrow="true"></ion-textarea>
+      </ion-item>
+
+      <ion-item>
+        <ion-label position="floating">Fecha y hora</ion-label>
+        <ion-datetime presentation="date-time" [(ngModel)]="incidencia.fecha"></ion-datetime>
+      </ion-item>
+
+      <ion-item lines="none">
+        <ion-checkbox slot="start" [(ngModel)]="incidencia.anonimo"></ion-checkbox>
+        <ion-label>Enviar de forma anónima</ion-label>
+      </ion-item>
+
+      <ion-button expand="block" color="danger" (click)="registrarIncidencia()">
+        Enviar Incidencia
+      </ion-button>
+    </ion-card-content>
+  </ion-card>
 </ion-content>

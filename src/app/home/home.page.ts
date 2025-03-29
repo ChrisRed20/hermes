@@ -34,6 +34,10 @@ export class HomePage implements AfterViewInit{
     const position = await Geolocation.getCurrentPosition();
     const lat = position.coords.latitude;
     const lon = position.coords.longitude;
+
+    if(!position) {
+      console.log("Ubicacion no disponible, revise la conexion")
+    }
     // const lat = 21.841905; // Coordenadas de la ciudad de Aguascalientes
     // const lon = -102.353480; // Coordenadas de la ciudad de Aguascalientes
 
@@ -50,7 +54,7 @@ export class HomePage implements AfterViewInit{
     this.marker = L.marker([lat, lon]).addTo(this.map).bindPopup('ubicación actual').openPopup();
 
     // Actualizar la posicion del marcador
-    this.trackPosition();
+    // this.trackPosition();
   }
 
   async trackPosition () {

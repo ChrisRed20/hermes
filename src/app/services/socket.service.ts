@@ -7,19 +7,19 @@ import { io } from "socket.io-client";
 })
 export class SocketService {
 
-  private socket = io('http://localhost:3000');
+  // private socket = io('http://localhost:3000');
 
-  constructor() { }
+  // constructor() { }
 
-  enviarUbicacion(data: any) {
-    this.socket.emit('ubicacion-conductor', data);
-  }
+  // enviarUbicacion(data: any) {
+  //   this.socket.emit('ubicacion-conductor', data);
+  // }
 
-  escucharUbicacion(): Observable<any> {
-    return new Observable(observer => {
-      this.socket.on('ubicacion-actualizada', (data) => {
-        observer.next(data);
-      });
-    });
-  }
+  // escucharUbicacion(): Observable<any> {
+  //   return new Observable(observer => {
+  //     this.socket.on('ubicacion-actualizada', (data) => {
+  //       observer.next(data);
+  //     });
+  //   });
+  // }
 }
